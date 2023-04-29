@@ -1,0 +1,36 @@
+2023-04-29 10:20:25+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.2+maria~ubu2204 started.
+2023-04-29 10:20:25+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2023-04-29 10:20:25+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:10.11.2+maria~ubu2204 started.
+2023-04-29 10:20:26+00:00 [Note] [Entrypoint]: Initializing database files
+
+
+PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !
+To do so, start the server, then issue the following command:
+
+'/usr/bin/mariadb-secure-installation'
+
+which will also give you the option of removing the test
+databases and anonymous user created by default.  This is
+strongly recommended for production servers.
+
+See the MariaDB Knowledgebase at https://mariadb.com/kb
+
+Please report any problems at https://mariadb.org/jira
+
+The latest information about MariaDB is available at https://mariadb.org/.
+
+Consider joining MariaDB's strong and vibrant community:
+https://mariadb.org/get-involved/
+
+2023-04-29 10:20:32+00:00 [Note] [Entrypoint]: Database files initialized
+2023-04-29 10:20:32+00:00 [Note] [Entrypoint]: Starting temporary server
+2023-04-29 10:20:32+00:00 [Note] [Entrypoint]: Waiting for server startup
+2023-04-29 10:20:33+00:00 [Note] [Entrypoint]: Temporary server started.
+2023-04-29 10:20:36+00:00 [Note] [Entrypoint]: GENERATED ROOT PASSWORD: T!H<8>d4zL:_8rl8a%z/i){3A;R(,P5n
+2023-04-29 10:20:36+00:00 [Note] [Entrypoint]: Securing system users (equivalent to running mysql_secure_installation)
+
+2023-04-29 10:20:36+00:00 [Note] [Entrypoint]: Stopping temporary server
+2023-04-29 10:20:36+00:00 [Note] [Entrypoint]: Temporary server stopped
+
+2023-04-29 10:20:36+00:00 [Note] [Entrypoint]: MariaDB init process done. Ready for start up.
+
