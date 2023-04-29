@@ -26,9 +26,12 @@ docker container run -d --name webserver -p 8080:80 httpd
 
 #proxy
 docker container run -d --name proxy -p 80:80 nginx
+docker container top nginx
+docker container inspect nginx
 
 #stop
 docker stop  proxy webserver db
 
 #delete
 docker rm  proxy webserver db
+
