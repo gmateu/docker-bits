@@ -1,0 +1,24 @@
+#send command to container enter to shell, exit stops contanier
+docker container run -it --name proxy nginx bash
+
+#run ubuntu
+docker container run -it --name ubuntu ubuntu
+
+#to rerun the container
+docker start -ai ubuntu
+
+
+#exec
+docker container run -d -p 3306:3306 --name db -e MYSQL_RANDOM_ROOT_PASSWORD=yes mariadb
+docker container exec -it db bash
+
+docker container start debian
+docker container exec -it debian bash
+docker container exec -it debian apt update
+docker container exec -it debian apt install -y apache2 
+
+#alpine
+docker pull alpine
+docker container run -it alpine bash
+#no bash in the container has sh
+docker container run -it alpine sh
