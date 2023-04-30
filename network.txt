@@ -29,6 +29,25 @@ docker network connect my_app_net webhost
 #diconnect from one network
 docker network disconnect bridge webhost
 
+#create second container
+docker container run -d --name my_nginx --network my_app_net nginx:alpine
+
+#containers can comunicate
+docker container exec -it my_nginx ping new_nginx 
+
+#but not to another network
+docker container exec -it my_nginx ping webhost
+ping: bad address 'webhost'
+
+
+
+
+
+
+
+
+
+
 
 
 
