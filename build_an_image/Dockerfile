@@ -9,5 +9,5 @@ COPY www www
 # docker build -t enguillem/nginx .
 
 #run a image
-# docker container run -it -d -p 80:80 --name enguille_nginx enguillem/nginx
+# docker container run -it -d -p 80:80  --rm --name enguille_nginx enguillem/nginx
 
