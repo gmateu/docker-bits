@@ -1,0 +1,19 @@
+#create a network named neo
+docker network create neo
+
+#create ubuntu container
+docker container run -it -d --name ubuntu_neo --network neo ubuntu:14.04
+
+#create centos container
+docker container run -it -d --name centos_neo --network neo centos:7
+
+#install curl on ubuntu
+docker container exec -it ubuntu_neo apt install -y curl
+
+#install curl on centos
+docker container exec -it centos_neo yum update curl
+
+#check curl version
+docker container exec -it ubuntu_neo curl --version
+docker container exec -it centos_neo curl --version
+
