@@ -69,7 +69,9 @@ ls /var/lib/docker/volumes/
 
 we can reuse the same volumen for another container
 
-#create containers
+#BIND MOUNTING
+
+
 
 
 
