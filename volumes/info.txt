@@ -1,0 +1,83 @@
+#download mysql
+docker pull mysql
+docker image inspect mysql
+
+ "Volumes": {
+                "/var/lib/mysql": {}
+            },
+
+
+docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
+docker container inspect mysql
+"Mounts": [
+            {
+                "Type": "volume",
+                "Name": "3f45ea5f04d2c1d433b1ddc172ae3cbd050cb8a2d1dc874685b472b50b1aee41",
+                "Source": "/var/lib/docker/volumes/3f45ea5f04d2c1d433b1ddc172ae3cbd050cb8a2d1dc874685b472b50b1aee41/_data",
+                "Destination": "/var/lib/mysql",
+                "Driver": "local",
+                "Mode": "",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+
+docker volume ls
+DRIVER    VOLUME NAME
+local     3f45ea5f04d2c1d433b1ddc172ae3cbd050cb8a2d1dc874685b472b50b1aee41
+
+docker volume  inspect 3f45ea5f04d2c1d433b1ddc172ae3cbd050cb8a2d1dc874685b472b50b1aee41 
+[
+    {
+        "CreatedAt": "2023-05-01T09:12:35+02:00",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.volume.anonymous": ""
+        },
+        "Mountpoint": "/var/lib/docker/volumes/3f45ea5f04d2c1d433b1ddc172ae3cbd050cb8a2d1dc874685b472b50b1aee41/_data",
+        "Name": "3f45ea5f04d2c1d433b1ddc172ae3cbd050cb8a2d1dc874685b472b50b1aee41",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+sudo ls /var/lib/docker/volumes
+3f45ea5f04d2c1d433b1ddc172ae3cbd050cb8a2d1dc874685b472b50b1aee41  backingFsBlockDev  metadata.db
+
+If we remove the container the data still there
+
+#named volumes -v
+docker container run -d --name mysql -v mysql:/var/lib/mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
+docker volume ls
+DRIVER    VOLUME NAME
+local     3f45ea5f04d2c1d433b1ddc172ae3cbd050cb8a2d1dc874685b472b50b1aee41
+local     mysql
+
+docker volume inspect mysql 
+[
+    {
+        "CreatedAt": "2023-05-01T09:18:28+02:00",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/mysql/_data",
+        "Name": "mysql",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+ls /var/lib/docker/volumes/
+3f45ea5f04d2c1d433b1ddc172ae3cbd050cb8a2d1dc874685b472b50b1aee41  backingFsBlockDev  metadata.db  mysql
+
+we can reuse the same volumen for another container
+
+#create containers
+
+
+
+
+
+
+
+
+
+
+
