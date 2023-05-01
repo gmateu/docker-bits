@@ -1,3 +1,5 @@
+#docker build -t test .
+#docker container run -p 80:3000 --rm --name test test
 FROM node:6-alpine
 
 
