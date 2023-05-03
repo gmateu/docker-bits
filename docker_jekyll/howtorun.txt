@@ -1,0 +1,1 @@
+docker run -p 80:4000 -v /home/guillem/docker/docker-bits/docker_jekyll:/site bretfisher/jekyll-serve
